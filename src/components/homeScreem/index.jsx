@@ -14,15 +14,12 @@ export default function HomeScreem() {
                     <a 
                         href="https://github.com/LucasEfdl" 
                         target="blank"
-                    >   
-                        Lucas Emanuel
-                    </a> 
-                    and 
+                    > Lucas Emanuel
+                    </a> and 
                     <a 
                         href="https://github.com/murilofontes1" 
                         target="blank"
-                    >
-                        Murilo Fontes
+                    > Murilo Fontes
                     </a>   
                 </p>
             </div>
