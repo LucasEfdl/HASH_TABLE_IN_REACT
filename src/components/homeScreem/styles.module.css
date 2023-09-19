@@ -1,0 +1,23 @@
+.wraper{
+    font-family: "Inter", sans-serif;
+    font-weight: 300;
+    background-color: #E9E9E9;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    width: 600px;
+    padding: 2rem;
+}
+.info{
+    font-weight: 100;
+    font-size: 14px;
+    display: flex;
+    justify-content: end;
+}
+.info a {
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 600;
+    color: inherit;
+}

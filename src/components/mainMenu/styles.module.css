@@ -1,0 +1,11 @@
+
+.mainMenur{
+    background-color: #F6F6F6;
+    padding: 2rem;
+    width: fit-content;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-left: 2rem;
+}

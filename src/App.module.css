@@ -1,0 +1,5 @@
+.wraper{
+    display: flex;
+    height: 600px;
+    box-shadow: 4px 4px 10px #66666638;
+}

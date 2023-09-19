@@ -1,0 +1,16 @@
+.wraper {
+    border: 0 none;
+    border-radius: 30px;
+    margin-top: 2rem;
+    padding: .7rem;
+    height: 50px;
+    min-width: 150px;
+    background-color: #FFB6B6;
+    cursor: pointer;
+    text-align: center;
+    font-family: "inter", sans-serif;
+    transition: 0.3s;
+}
+.wraper:hover{
+    background-color: #f78c8c;
+}
