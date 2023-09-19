@@ -30,6 +30,7 @@ export default function App() {
         searchBarValue={searchBarValue}
         setSearchBarValue={setSearchBarValue}
         setEditButton={setEditButton}
+        setFormData={setFormData}
         hashTable={hashTable}
       />
       {screen == "home-screen" && 

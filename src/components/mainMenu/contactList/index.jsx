@@ -11,7 +11,7 @@ export default function ContactList(props) {
                         <h3 
                             className={style.name}
                             onClick={() => {
-                                console.log(props.hashTable);
+                                props.setEditButton(true)
                                 props.setSelectedContact(contact)
                                 props.setScreen("contact-screen")
                             }} 

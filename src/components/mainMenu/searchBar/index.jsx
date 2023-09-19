@@ -16,6 +16,11 @@ export default function SearchBar(props) {
 
     const handleInsertion = () => {
         props.setEditButton(false)
+        props.setFormData({
+            name: '',
+            email: '',
+            phone: '',
+        })
         props.setScreen("edit-screen")
     }
 

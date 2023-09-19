@@ -17,11 +17,13 @@ export default function MainMenur(props) {
                 searchBarValue={props.searchBarValue}
                 setSearchBarValue={props.setSearchBarValue}
                 setSelectedContact={props.setSelectedContact}
+                setFormData={props.setFormData}
                 hashTable={props.hashTable}
                 setEditButton={props.setEditButton}
             />
             <ContactList
                 setSelectedContact={props.setSelectedContact}
+                setEditButton={props.setEditButton}
                 hashTable={props.hashTable}
                 setScreen={props.setScreen}
             />
