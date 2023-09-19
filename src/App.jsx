@@ -15,6 +15,7 @@ export default function App() {
   const [screen, setScreen] = useState("home-screen")
   const [selectedContact, setSelectedContact] = useState(null)
   const [searchBarValue, setSearchBarValue] = useState("")
+  const [editButton, setEditButton] = useState(false)
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -28,6 +29,7 @@ export default function App() {
         setSelectedContact={setSelectedContact}
         searchBarValue={searchBarValue}
         setSearchBarValue={setSearchBarValue}
+        setEditButton={setEditButton}
         hashTable={hashTable}
       />
       {screen == "home-screen" && 
@@ -43,6 +45,8 @@ export default function App() {
           hashTable={hashTable}
           setHashTable={setHashTable}
           setScreen={setScreen}
+          editButton={editButton}
+          setEditButton={setEditButton}
         />
       }
       {screen == "contact-screen" &&

@@ -49,11 +49,20 @@ export default function EditScreem(props) {
                     inputChange={handleInputChange}
                 />
                 <div>
-                    <Button 
-                        func={handleSubmit}
-                    >
-                        Salvar
-                    </Button>
+                    {props.editButton == false ? (
+                        <Button 
+                            func={handleSubmit}
+                        >
+                            Salvar
+                        </Button>
+                    ) : 
+                    (
+                        <Button 
+                            func={handleSubmit}
+                        >
+                            Editar
+                        </Button>
+                    )}
                 </div>
             </div>
         </div>

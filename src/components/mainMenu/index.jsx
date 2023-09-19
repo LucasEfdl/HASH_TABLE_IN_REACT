@@ -18,6 +18,7 @@ export default function MainMenur(props) {
                 setSearchBarValue={props.setSearchBarValue}
                 setSelectedContact={props.setSelectedContact}
                 hashTable={props.hashTable}
+                setEditButton={props.setEditButton}
             />
             <ContactList
                 setSelectedContact={props.setSelectedContact}
