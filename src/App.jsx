@@ -47,10 +47,9 @@ export default function App() {
       }
       {screen == "contact-screen" &&
         <ContactScreen
-          name={selectedContact.name}
-          email={selectedContact.email}
-          phone={selectedContact.phone}
+          contact={selectedContact}
           setScreen={setScreen}
+          setFormData={setFormData}
           hashTable={hashTable}
         />
       }

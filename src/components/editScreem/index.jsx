@@ -50,7 +50,7 @@ export default function EditScreem(props) {
                 />
                 <div>
                     <Button 
-                    func={handleSubmit}
+                        func={handleSubmit}
                     >
                         Salvar
                     </Button>

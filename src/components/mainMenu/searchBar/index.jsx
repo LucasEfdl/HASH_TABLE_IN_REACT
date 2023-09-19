@@ -2,12 +2,15 @@ import { hashSearch, useHashKey } from "../../../hooks/useHashTable"
 import styles from "./styles.module.css"
 
 export default function SearchBar(props) {
+    
     const handleClick = () => {
         const key = useHashKey(props.searchBarValue)
         const contact = hashSearch(props.hashTable, key)
         props.setSearchBarValue("")
-        props.setSelectedContact(contact)
-        props.setScreen("contact-screen")
+        if(contact != null) {
+            props.setSelectedContact(contact)
+            props.setScreen("contact-screen")
+        }
     }
 
     return (

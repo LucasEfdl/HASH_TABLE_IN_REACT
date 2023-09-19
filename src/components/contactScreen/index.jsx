@@ -7,6 +7,11 @@ import { hashRemoval, useHashKey } from "../../hooks/useHashTable";
 
 export default function ContactScreen(props) {
     
+    const handleEdit = () => {
+        props.setFormData(props.contact)
+        props.setScreen("edit-screen")
+    }
+
     const handleRemoval = () => {
         const contact = {
             name: props.name,
@@ -22,12 +27,12 @@ export default function ContactScreen(props) {
     return (
         <div className={styles.wraper}>
             <div className={styles.info}>
-                <h3>{props.name}</h3>
-                <p>{props.email}</p>
-                <p>{props.phone}</p>
+                <h3>{props.contact.name}</h3>
+                <p>{props.contact.email}</p>
+                <p>{props.contact.phone}</p>
             </div>
             <div className={styles.btns}>
-                <ButtonGreen>Editar</ButtonGreen>
+                <ButtonGreen func={handleEdit}>Editar</ButtonGreen>
                 <ButtonRed func={handleRemoval}>Deletar</ButtonRed>
             </div>
         </div>
