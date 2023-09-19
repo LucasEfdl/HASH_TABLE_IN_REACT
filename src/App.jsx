@@ -14,6 +14,7 @@ export default function App() {
   const [hashTable, setHashTable] = useState(() => createHashTable())
   const [screen, setScreen] = useState("home-screen")
   const [selectedContact, setSelectedContact] = useState(null)
+  const [searchBarValue, setSearchBarValue] = useState("")
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -22,10 +23,8 @@ export default function App() {
 
   return (
     <div className={styles.wraper}>
-      <MainMenur 
-        screen={screen} 
-        setScreen={setScreen} 
-        selectedContact={selectedContact}
+      <MainMenur  
+        setScreen={setScreen}
         setSelectedContact={setSelectedContact}
         hashTable={hashTable}
       />

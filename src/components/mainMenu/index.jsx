@@ -12,15 +12,12 @@ export default function MainMenur(props) {
 
     return (
         <div className={styles.mainMenur}>
-            <SearchBar 
-                screen={props.screen} 
+            <SearchBar
                 setScreen={props.setScreen}
             />
             <ContactList
-                selectedContact={props.selectedContact}
                 setSelectedContact={props.setSelectedContact}
-                hashTable={props.hashTable} 
-                screen={props.screen} 
+                hashTable={props.hashTable}
                 setScreen={props.setScreen}
             />
             <Button 
