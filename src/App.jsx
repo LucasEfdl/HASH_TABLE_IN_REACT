@@ -26,6 +26,8 @@ export default function App() {
       <MainMenur  
         setScreen={setScreen}
         setSelectedContact={setSelectedContact}
+        searchBarValue={searchBarValue}
+        setSearchBarValue={setSearchBarValue}
         hashTable={hashTable}
       />
       {screen == "home-screen" && 

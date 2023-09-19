@@ -1,7 +1,7 @@
 import { sequenceAddition, stringToBinary } from "./stringUtils";
 
-export function useHashKey(contact) {
-    let key = stringToBinary(contact.email);
+export function useHashKey(email) {
+    let key = stringToBinary(email);
     key = sequenceAddition(key);
     return parseInt(key, 2)
 }
@@ -33,5 +33,13 @@ export function hashRemoval(hashTable, contact, key){
     if(hashTable[key] != null){
         hashTable[key] = null;
         console.log("O contato " + contact.name + " foi removido com sucesso")
+    }
+}
+
+export function hashSearch(hashTable, key) {
+    if (hashTable[key]) {
+        return hashTable[key]
+    }else {
+        return null
     }
 }

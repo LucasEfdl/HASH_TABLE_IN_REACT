@@ -1,17 +1,27 @@
+import { hashSearch, useHashKey } from "../../../hooks/useHashTable"
 import styles from "./styles.module.css"
 
 export default function SearchBar(props) {
-
+    const handleClick = () => {
+        const key = useHashKey(props.searchBarValue)
+        const contact = hashSearch(props.hashTable, key)
+        props.setSearchBarValue("")
+        props.setSelectedContact(contact)
+        props.setScreen("contact-screen")
+    }
 
     return (
         <div className={styles.wraper}>
             <input 
                 className={styles.input} 
-                type="text" 
+                type="text"
+                value={props.searchBarValue}
+                onChange={(ev) => props.setSearchBarValue(ev.target.value)}
                 placeholder="Buscar contato..."
             ></input>
             <svg 
                 className={styles.icon}
+                onClick={handleClick}
                 xmlns="http://www.w3.org/2000/svg" 
                 x="0px" 
                 y="0px" 

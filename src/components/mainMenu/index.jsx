@@ -14,6 +14,10 @@ export default function MainMenur(props) {
         <div className={styles.mainMenur}>
             <SearchBar
                 setScreen={props.setScreen}
+                searchBarValue={props.searchBarValue}
+                setSearchBarValue={props.setSearchBarValue}
+                setSelectedContact={props.setSelectedContact}
+                hashTable={props.hashTable}
             />
             <ContactList
                 setSelectedContact={props.setSelectedContact}

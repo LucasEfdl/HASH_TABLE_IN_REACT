@@ -16,7 +16,7 @@ export default function EditScreem(props) {
     }
 
     const handleSubmit = () => {
-        const key = useHashKey(props.formData)
+        const key = useHashKey(props.formData.email)
         hashInsertion(props.hashTable, props.formData, key)
         props.setFormData({
             name: '',

@@ -13,7 +13,7 @@ export default function ContactScreen(props) {
             email: props.email,
             phone: props.phone
         }
-        const key = useHashKey(contact)
+        const key = useHashKey(contact.email)
 
         hashRemoval(props.hashTable, contact, key)
         props.setScreen("home-screen")
