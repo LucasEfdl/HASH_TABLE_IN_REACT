@@ -15,7 +15,7 @@ export default function EditScreem(props) {
         })
     }
 
-    const handleSubmit = () => {
+    const handleSalve = () => {
         const key = useHashKey(props.formData.email)
         hashInsertion(props.hashTable, props.formData, key)
         props.setFormData({
@@ -67,7 +67,7 @@ export default function EditScreem(props) {
                 <div>
                     {props.editButton == false ? (
                         <Button 
-                            func={handleSubmit}
+                            func={handleSalve}
                         >
                             Salvar
                         </Button>
