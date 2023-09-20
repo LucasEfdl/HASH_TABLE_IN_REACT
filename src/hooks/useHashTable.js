@@ -14,17 +14,21 @@ export function createHashTable() {
 }
 
 export function hashInsertion(hashTable, contact, key){
-    if(hashTable[key] == null || hashTable[key].hasBeenUsed == true){
+    if((hashTable[key] == null || hashTable[key].hasBeenUsed == true)){
         hashTable[key] = contact;
     } else{
-        for(let i = key+1; i < hashTable.length; i++){
-            if(hashTable[i] == null || hashTable[i].hasBeenUsed == true){
-                hashTable[i] = contact;
-                console.log("Insercao concluida")
-                break;
-            } else if (i == 31) {
-                console.log("Erro ao inserir: sem espaço")
+        if((contact.email == hashTable[key])){
+            for(let i = key+1; i < hashTable.length; i++){
+                if(hashTable[i] == null || hashTable[i].hasBeenUsed == true){
+                    hashTable[i] = contact;
+                    console.log("Insercao concluida")
+                    break;
+                } else if (i == 31) {
+                    console.log("Erro ao inserir: sem espaço")
+                }
             }
+        } else {
+            console.log("Esse contato ja existe na sua agenda");
         }
     }
 }
