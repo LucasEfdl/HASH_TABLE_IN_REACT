@@ -5,7 +5,7 @@ export default function SearchBar(props) {
     
     const handleSearch = () => {
         const key = useHashKey(props.searchBarValue)
-        const contact = hashSearch(props.hashTable, key)
+        const contact = hashSearch(props.hashTable, props.searchBarValue, key)
         props.setSearchBarValue("")
         if(contact != null) {
             props.setSelectedContact(contact)

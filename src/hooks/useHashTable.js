@@ -55,16 +55,15 @@ export function hashRemoval(hashTable, contact, key){
     } 
 }
 
-export function hashSearch(hashTable, contact,  key) {
-    if (hashTable[key].email == contact.email) {
+export function hashSearch(hashTable, email, key) {
+    if(hashTable[key]?.email == email){
         return hashTable[key]
-    }else if(hashTable[key + 1].hashBeenUsed == true){
-        for(let i = key + 1; i < hashTable.length; i++ ){
-            if(hashTable[i].email == contact.email) {
+    } else {
+        for(let i = key +1; i < hashTable.length; i++) {
+            if(hashTable[i]?.email == email){
                 return hashTable[i]
             }
         }
-    } else {
-        return null
-    }
+    } 
+    console.log("Contato não encontrado");
 }
