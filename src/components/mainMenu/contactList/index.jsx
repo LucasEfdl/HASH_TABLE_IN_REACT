@@ -6,7 +6,7 @@ export default function ContactList(props) {
     return (
         <div className={style.wraper}>
             {props.hashTable.map((contact) => {
-                if(contact != null) {
+                if(contact != null && contact.hasBeenUsed != true) {
                     return (
                         <h3 
                             className={style.name}

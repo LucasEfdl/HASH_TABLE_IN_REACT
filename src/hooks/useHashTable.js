@@ -14,11 +14,11 @@ export function createHashTable() {
 }
 
 export function hashInsertion(hashTable, contact, key){
-    if(hashTable[key] == null){
+    if(hashTable[key] == null || hashTable[key].hasBeenUsed == true){
         hashTable[key] = contact;
     } else{
         for(let i = key+1; i < hashTable.length; i++){
-            if(hashTable[i] == null){
+            if(hashTable[i] == null || hashTable[i].hasBeenUsed == true){
                 hashTable[i] = contact;
                 console.log("Insercao concluida")
                 break;
@@ -31,15 +31,36 @@ export function hashInsertion(hashTable, contact, key){
 
 export function hashRemoval(hashTable, contact, key){
     if(hashTable[key] != null){
-        hashTable[key] = null;
-        console.log("O contato " + contact.name + " foi removido com sucesso")
-    }
+        hashTable[key] = {
+            hasBeenUsed: true,
+            name: "",
+            email: "",
+            phone: ""
+        };
+
+        console.log(hashTable);
+        if(hashTable[key+1] != null) {
+            var nextKey = useHashKey(hashTable[key+1].email)
+        }
+        if (nextKey == key) {
+            console.log("O contato " + contact.name + " foi removido com sucesso")
+            hashInsertion(hashTable, hashTable[key+1], key)
+            hashRemoval(hashTable, hashTable[nextKey + 1], nextKey+1)
+        }
+        console.log(hashTable);
+    } 
 }
 
-export function hashSearch(hashTable, key) {
-    if (hashTable[key]) {
+export function hashSearch(hashTable, contact,  key) {
+    if (hashTable[key].email == contact.email) {
         return hashTable[key]
-    }else {
+    }else if(hashTable[key + 1].hashBeenUsed == true){
+        for(let i = key + 1; i < hashTable.length; i++ ){
+            if(hashTable[i].email == contact.email) {
+                return hashTable[i]
+            }
+        }
+    } else {
         return null
     }
 }

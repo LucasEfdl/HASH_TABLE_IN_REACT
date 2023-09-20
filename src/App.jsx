@@ -17,6 +17,7 @@ export default function App() {
   const [searchBarValue, setSearchBarValue] = useState("")
   const [editButton, setEditButton] = useState(false)
   const [formData, setFormData] = useState({
+    hasBeenUsed: false,
     name: '',
     email: '',
     phone: '',
@@ -38,16 +39,12 @@ export default function App() {
       }
       {screen == "edit-screen" && 
         <EditScreem 
-          name="Name..." 
-          email="Email..." 
-          phone="Phone..."
           formData={formData}
           setFormData={setFormData}
           hashTable={hashTable}
-          setHashTable={setHashTable}
+          selectedContact={selectedContact}
           setScreen={setScreen}
           editButton={editButton}
-          setEditButton={setEditButton}
         />
       }
       {screen == "contact-screen" &&
