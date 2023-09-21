@@ -1,3 +1,4 @@
+import ButtonGreen from "../buttonGreen";
 import Button from "../buttonGreen";
 import ContactList from "./contactList";
 import SearchBar from "./searchBar";
@@ -27,11 +28,11 @@ export default function MainMenur(props) {
                 hashTable={props.hashTable}
                 setScreen={props.setScreen}
             />
-            <Button 
+            <ButtonGreen 
                 func={exportarContatos}
             >
                 Exportar Contatos
-            </Button>
+            </ButtonGreen>
         </div>
         
     )

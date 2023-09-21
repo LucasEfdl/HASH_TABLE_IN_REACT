@@ -25,11 +25,12 @@ export function hashInsertion(hashTable, contact, key){
                     return;
                 } else if (i == 31) {
                     console.log("Erro ao inserir: sem espaço")
+                    return
                 }
             }
         }
+        console.log("Esse contato ja existe na sua agenda!");
     }
-    console.log("Esse contato ja existe na sua agenda!");
 }
 
 export function hashRemoval(hashTable, contact, key){
@@ -71,7 +72,7 @@ export function hashSearch(hashTable, email, key) {
     if(hashTable[key]?.email == email){
         return hashTable[key]
     } else {
-        for(let i = key +1; i < hashTable.length; i++) {
+        for(let i = key + 1; i < hashTable.length; i++) {
             if(hashTable[i]?.email == email){
                 return hashTable[i]
             }
@@ -79,5 +80,3 @@ export function hashSearch(hashTable, email, key) {
     } 
     console.log("Contato não encontrado");
 }
-
-console.log("lucas");
