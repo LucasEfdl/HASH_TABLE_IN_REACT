@@ -8,11 +8,13 @@ import ContactScreen from "./components/contactScreen";
 import EditScreem from "./components/editScreem";
 
 import { createHashTable } from "./hooks/useHashTable"
+import InfoScreen from "./components/infoScreen";
 
 
 export default function App() {
   const [hashTable, setHashTable] = useState(() => createHashTable())
   const [screen, setScreen] = useState("home-screen")
+  const [info, setInfo] = useState("")
   const [selectedContact, setSelectedContact] = useState(null)
   const [searchBarValue, setSearchBarValue] = useState("")
   const [editButton, setEditButton] = useState(false)
@@ -39,6 +41,7 @@ export default function App() {
       }
       {screen == "edit-screen" && 
         <EditScreem 
+          setInfo={setInfo}
           formData={formData}
           setFormData={setFormData}
           hashTable={hashTable}
@@ -55,6 +58,8 @@ export default function App() {
           hashTable={hashTable}
         />
       }
+      {screen == "info-screen" &&
+      <InfoScreen>{info}</InfoScreen>}
     </div>
   )
 }

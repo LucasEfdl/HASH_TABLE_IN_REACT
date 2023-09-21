@@ -17,7 +17,7 @@ export default function EditScreem(props) {
 
     const handleSave = () => {
         const key = useHashKey(props.formData.email)
-        hashInsertion(props.hashTable, props.formData, key)
+        const result = hashInsertion(props.hashTable, props.formData, key)
         props.setFormData({
             hasBeenUsed: false,
             name: '',
@@ -26,6 +26,14 @@ export default function EditScreem(props) {
         })
         console.log(props.hashTable);
         props.setScreen("home-screen")
+        console.log(result);
+        if (result == null) {
+            props.setInfo("Esse contato já existe na sua agenda!")
+            props.setScreen("info-screen")
+        } else if(typeof result == "string") {
+            props.setInfo(result)
+            props.setScreen("info-screen")
+        }
     }
 
     const handleEdit = () => {

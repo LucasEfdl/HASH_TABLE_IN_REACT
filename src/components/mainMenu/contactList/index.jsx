@@ -8,7 +8,8 @@ export default function ContactList(props) {
             {props.hashTable.map((contact) => {
                 if(contact != null && contact.hasBeenUsed != true) {
                     return (
-                        <h3 key={Math.floor(Math.random() * 1000) + 1}
+                        <h3 
+                            key ={Math.floor(Math.random() * 1000) + 1}
                             className={style.name}
                             onClick={() => {
                                 props.setEditButton(true)

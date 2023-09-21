@@ -16,20 +16,21 @@ export function createHashTable() {
 export function hashInsertion(hashTable, contact, key){
     if((hashTable[key] == null || hashTable[key].hasBeenUsed == true)){
         hashTable[key] = contact;
+        return true
     } else{
         if((contact.email != hashTable[key].email)){
             for(let i = key+1; i < hashTable.length; i++){
                 if(hashTable[i] == null || hashTable[i].hasBeenUsed == true){
                     hashTable[i] = contact;
                     console.log("Insercao concluida")
-                    return;
+                    return true;
                 } else if (i == 31) {
                     console.log("Erro ao inserir: sem espaço")
-                    return
+                    return "Lista de contatos já esta cheia"
                 }
             }
         }
-        console.log("Esse contato ja existe na sua agenda!");
+        return null
     }
 }
 
