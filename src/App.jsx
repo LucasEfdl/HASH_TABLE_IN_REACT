@@ -12,7 +12,7 @@ import InfoScreen from "./components/infoScreen";
 
 
 export default function App() {
-  const [hashTable, setHashTable] = useState(() => createHashTable())
+  const [hashTable ] = useState(() => createHashTable())
   const [screen, setScreen] = useState("home-screen")
   const [info, setInfo] = useState("")
   const [selectedContact, setSelectedContact] = useState(null)

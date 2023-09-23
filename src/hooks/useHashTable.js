@@ -46,12 +46,12 @@ export function hashRemoval(hashTable, contact, key){
         if(hashTable[key+1] != null) {
             var nextKey = useHashKey(hashTable[key+1].email)
         }
+
         if (nextKey == key) {
             console.log("O contato " + contact.name + " foi removido com sucesso")
             hashInsertion(hashTable, hashTable[key+1], key)
             hashRemoval(hashTable, hashTable[nextKey + 1], nextKey+1)
         }
-        console.log(hashTable);
     } else {
         for (let i = key + 1; i < hashTable.length; i++) {
             if(hashTable[i].email == contact.email) {
@@ -61,7 +61,6 @@ export function hashRemoval(hashTable, contact, key){
                     email: "",
                     phone: ""
                 };
-                console.log(hashTable);
                 return console.log("Remoção concluida");
             }
         }
