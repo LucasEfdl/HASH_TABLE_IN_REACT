@@ -50,5 +50,5 @@ export default function importContact(hashTable) {
 
     list.Sheets["Lista 1"] = datas
 
-    XLSX.writeFile(list, "Lista com todos os meus contatos.xlsx", {bookType: "xlsx", type: "bynary"})
+    XLSX.writeFile(list, "CONTACT_LIST.xlsx", {bookType: "xlsx", type: "bnary"})
 }
