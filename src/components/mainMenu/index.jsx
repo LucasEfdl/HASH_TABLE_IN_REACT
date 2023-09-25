@@ -1,4 +1,4 @@
-import importContact from "../../hooks/import";
+import exportContact from "../../hooks/export";
 import ButtonGreen from "../buttonGreen";
 import ContactList from "./contactList";
 import SearchBar from "./searchBar";
@@ -6,9 +6,7 @@ import SearchBar from "./searchBar";
 import styles from "./styles.module.css"
 
 export default function MainMenur(props) {
-    const handleClick = () => {
-        
-    } 
+    
 
     return (
         <div className={styles.mainMenur}>
@@ -28,7 +26,7 @@ export default function MainMenur(props) {
                 setScreen={props.setScreen}
             />
             <ButtonGreen 
-                func={() => importContact(props.hashTable)}
+                func={() => exportContact(props.hashTable)}
             >
                 Exportar Contatos
             </ButtonGreen>
