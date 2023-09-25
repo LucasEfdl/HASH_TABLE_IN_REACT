@@ -43,9 +43,9 @@ export default function EditScreem(props) {
 
         const oldKey = useHashKey(oldContact.email)
         const newKey = useHashKey(newContact.email)
-
-        hashInsertion(props.hashTable, newContact, newKey)
+        
         hashRemoval(props.hashTable, oldContact, oldKey)
+        hashInsertion(props.hashTable, newContact, newKey)
 
         props.setScreen("home-screen")
     }
